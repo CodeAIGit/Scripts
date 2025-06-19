@@ -140,7 +140,7 @@ The assessment tool provides comprehensive evaluation of your system's current s
 - **Gap Identification**: Highlights non-compliant settings
 - **Risk Assessment**: Prioritizes security issues by severity
 - **Compliance Scoring**: Provides percentage compliance ratings
-- **Detailed Reporting**: Generates professional HTML and CSV reports
+- **Detailed Reporting**: Generates CSV reports
 - **Recommendation Engine**: Suggests specific remediation steps
 - **Historical Tracking**: Maintains assessment history for trend analysis
 
