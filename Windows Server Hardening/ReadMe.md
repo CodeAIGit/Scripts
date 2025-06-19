@@ -1,6 +1,6 @@
 # CIS Security Hardening Scripts
 
-Comprehensive PowerShell scripts for implementing CIS (Center for Internet Security) benchmarks on Windows systems to enhance security posture and compliance.
+PowerShell scripts for implementing CIS (Center for Internet Security) benchmarks on Windows systems to enhance security posture and compliance.
 
 ## Overview
 
@@ -20,7 +20,7 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 
 ## System Requirements
 
-- **Operating System**: Windows 10/11 or Windows Server 2016/2019/2022
+- **Operating System**: Windows Server 2019/2022/2025
 - **PowerShell**: Version 5.1 or higher
 - **Privileges**: Administrator rights required
 - **Memory**: Minimum 4GB RAM recommended
@@ -54,10 +54,10 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 4. **Run the desired script**
    ```powershell
    # For Level 1 hardening
-   .\CIS-Level1-Hardening.ps1
+   .\CIS-Level1-MultiVersion-Hardening.ps1
    
    # For Level 2 hardening (run after Level 1)
-   .\CIS-Level2-Hardening.ps1
+   .\CIS-Level2-MultiVersion-Hardening.ps1
    ```
 
 ## Features
@@ -130,8 +130,7 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 ## Compatibility Notes
 
 ### Known Compatible Environments
-- Standard Windows 10/11 Enterprise environments
-- Windows Server 2016/2019/2022 standard configurations
+- Windows Server 2019/2022/2025 standard configurations
 - Domain-joined and standalone systems
 - Virtual and physical machines
 
@@ -178,4 +177,4 @@ These scripts modify critical system security settings. While designed to enhanc
 **Created by:** [Gulab Prasad](https://gulabprasad.com)  
 **Website:** https://gulabprasad.com  
 **Version:** 1.0  
-**Last Updated:** 2024
+**Last Updated:** 2025
