@@ -399,6 +399,6 @@ For enterprise support and custom implementations:
 
 ---
 
-**Created with ❤️ by [Gulab Prasad](https://gulabprasad.com)**
+**Created by [Gulab Prasad](https://gulabprasad.com)**
 
 *Empowering IT professionals with better tools for hybrid identity management.*
