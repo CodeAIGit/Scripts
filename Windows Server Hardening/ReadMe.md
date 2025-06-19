@@ -174,7 +174,7 @@ These scripts modify critical system security settings. While designed to enhanc
 
 ---
 
-**Created by:** [Gulab Prasad] (https://gulabprasad.com)  
+**Created by:** Gulab Prasad
 **Website:** https://gulabprasad.com  
 **Version:** 1.0  
 **Last Updated:** 2025
