@@ -13,7 +13,7 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 - **Target**: Basic security hardening suitable for most environments
 - **Compatibility**: Designed for general enterprise use with broad compatibility
 
-![CIS Level 1 Hardening Screenshot](screenshots/cis-level1-hardening.png)
+![CIS Level 1 Hardening Screenshot]
 *CIS Level 1 Hardening Script execution with real-time progress tracking*
 ![image](https://github.com/user-attachments/assets/09409781-a8aa-4619-a335-f5af1aa8e1fa)
 
@@ -22,7 +22,7 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 - **Target**: Enhanced security for sensitive or high-risk environments
 - **Compatibility**: May impact some applications - thorough testing recommended
 
-![CIS Level 2 Hardening Screenshot](screenshots/cis-level2-hardening.png)
+![CIS Level 2 Hardening Screenshot]
 *CIS Level 2 Hardening Script with advanced security configurations*
 ![image](https://github.com/user-attachments/assets/c5c1212c-f2dc-4b4e-9b85-3287ef730cde)
 
@@ -32,7 +32,7 @@ The Center for Internet Security (CIS) Controls are a prioritized set of actions
 - **Usage**: Run before hardening to establish baseline, or after to verify implementation
 - **Output**: Detailed HTML/CSV reports with recommendations and current status
 
-![CIS Assessment Tool Screenshot](screenshots/cis-assessment-tool.png)
+![CIS Assessment Tool Screenshot]
 *CIS Assessment Tool in action - compliance dashboard and report generation*
 ![image](https://github.com/user-attachments/assets/7d9e724e-d640-4115-a979-0c301828c155)
 
