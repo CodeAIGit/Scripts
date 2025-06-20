@@ -5,6 +5,8 @@ PowerShell scripts for implementing CIS (Center for Internet Security) benchmark
 ## Overview
 
 The Center for Internet Security (CIS) Controls are a prioritized set of actions that collectively form a defense-in-depth set of best practices that mitigate the most common attack vectors. These scripts automate the implementation of CIS benchmarks for Windows environments.
+![image](https://github.com/user-attachments/assets/a11e3eff-8689-435e-87dc-41ed39b7d3a9)
+
 
 ## Scripts Included
 
