@@ -67,7 +67,7 @@ The script automatically checks for and uses:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/CodeAIGit/azure-ad-connect-health-check.git
+git clone https://github.com/CodeAIGit/Scripts.git
 cd azure-ad-connect-health-check
 ```
 
