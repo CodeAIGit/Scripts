@@ -2,6 +2,14 @@
 
 A PowerShell script for monitoring and analyzing Azure AD Connect (Entra ID Connect) health, configuration, and synchronization status.
 
+## 👨‍💻 Author
+
+**Gulab Prasad**
+- GitHub: [@gulabprasad](https://github.com/CodeAIGit)
+- LinkedIn: [Gulab Prasad](https://linkedin.com/in/gulab)
+- Email: contact@gulabprasad.com
+- Blog: [Identity & Azure Insights](https://gulabprasad.com)
+
 ![image](https://github.com/user-attachments/assets/3f9038e3-5812-443c-b219-84ed35831a43)
 
 ## 🎯 Overview
@@ -255,13 +263,6 @@ Warning: No AD connectors found
 - **v2.0** (Current) - Complete sync rules analysis, enhanced reporting
 - **v1.0** - Initial release with basic health monitoring
 
-## 👨‍💻 Author
-
-**Gulab Prasad**
-- GitHub: [@gulabprasad](https://github.com/CodeAIGit)
-- LinkedIn: [Gulab Prasad](https://linkedin.com/in/gulab)
-- Email: contact@gulabprasad.com
-- Blog: [Identity & Azure Insights](https://gulabprasad.com)
 
 ## 🎯 Why This Script?
 
