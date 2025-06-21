@@ -5,7 +5,7 @@ A PowerShell script for monitoring and analyzing Azure AD Connect (Entra ID Conn
 ## 👨‍💻 Author
 
 **Gulab Prasad**
-- GitHub: [@gulabprasad](https://github.com/CodeAIGit)
+- GitHub: [@CodeAIGit](https://github.com/CodeAIGit)
 - LinkedIn: [Gulab Prasad](https://linkedin.com/in/gulab)
 - Email: contact@gulabprasad.com
 - Blog: [Gulab Prasad](https://gulabprasad.com)
