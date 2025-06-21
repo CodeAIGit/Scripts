@@ -1,4 +1,4 @@
-# Azure AD Connect Health Check Script
+# Entra ID Connect Health Check Script
 
 A PowerShell script for monitoring and analyzing Azure AD Connect (Entra ID Connect) health, configuration, and synchronization status.
 
