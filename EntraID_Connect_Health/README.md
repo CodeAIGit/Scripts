@@ -172,7 +172,7 @@ Custom Rules: 17
 
 ### Method 2: Git Clone
 ```bash
-git clone https://github.com/CodeAIGit/azure-ad-connect-health-check.git
+git clone https://github.com/CodeAIGit/Scripts.git
 cd azure-ad-connect-health-check
 ```
 
@@ -181,7 +181,7 @@ cd azure-ad-connect-health-check
 # Download script directly
 $scriptPath = "C:\Scripts\Azure"
 New-Item -Path $scriptPath -ItemType Directory -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CodeAIGit/azure-ad-connect-health-check/main/EntraConnect-HealthCheck.ps1" -OutFile "$scriptPath\EntraConnect-HealthCheck.ps1"
+Invoke-WebRequest -Uri "https://github.com/CodeAIGit/Scripts/blob/main/EntraID_Connect_Health/EntraConnect-HealthCheck.ps1" -OutFile "$scriptPath\EntraConnect-HealthCheck.ps1"
 ```
 
 ## 🔍 Understanding the Output
@@ -316,7 +316,7 @@ If this script helps you, please:
 
 ---
 
-**Made with ❤️ by [Gulab Prasad](https://github.com/gulabprasad) for the Azure AD Connect community**
+**Made by [Gulab Prasad](https://github.com/gulabprasad) for the Azure AD Connect community**
 
 *Empowering identity professionals with better tools and insights*
 
