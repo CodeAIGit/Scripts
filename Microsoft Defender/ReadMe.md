@@ -1,6 +1,6 @@
 # Microsoft Defender for Identity (MDI) Configuration Scripts
 
-Comprehensive PowerShell scripts for configuring domain controllers with all necessary policies, auditing, and service accounts for Microsoft Defender for Identity deployment.
+PowerShell scripts for configuring domain controllers with all necessary policies, auditing, and service accounts for Microsoft Defender for Identity deployment.
 
 ## 👨‍💻 Author Information
 
