@@ -1,0 +1,774 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDI Ultra-Detailed Enterprise Report - gulabprasad.com</title>
+    <style>
+        /* =========================================================================================== */
+        /* ULTRA-DETAILED ENTERPRISE REPORT STYLING */
+        /* =========================================================================================== */
+        
+        body { 
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; 
+            margin: 0; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container { 
+            max-width: 1600px; 
+            margin: 0 auto; 
+            background-color: white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            padding: 40px; 
+            text-align: center;
+        }
+        
+        .header h1 { 
+            margin: 0; 
+            font-size: 36px; 
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .header .enterprise-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .header .info-item {
+            text-align: center;
+        }
+        
+        .header .info-item .label {
+            font-size: 12px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header .info-item .value {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .section { 
+            margin: 0; 
+            padding: 30px; 
+            border-bottom: 1px solid #e0e0e0; 
+        }
+        
+        .section:last-child { 
+            border-bottom: none; 
+        }
+        
+        .section h2 { 
+            color: #667eea; 
+            margin-top: 0; 
+            margin-bottom: 25px; 
+            font-size: 28px;
+            font-weight: 300;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 { 
+            color: #333; 
+            margin-top: 25px; 
+            margin-bottom: 15px; 
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .section h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        /* Enhanced status indicator classes */
+        .status-excellent { color: #27ae60; font-weight: bold; }
+        .status-good { color: #2ecc71; font-weight: bold; }
+        .status-warning { color: #f39c12; font-weight: bold; }
+        .status-critical { color: #e74c3c; font-weight: bold; }
+        .status-error { color: #c0392b; font-weight: bold; }
+        
+        /* Enhanced table styling */
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even) { 
+            background-color: #f8f9ff; 
+        }
+        
+        tr:hover {
+            background-color: #e8f0fe;
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Enhanced compliance dashboard */
+        .enterprise-dashboard { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; 
+            margin-bottom: 30px; 
+        }
+        
+        .dashboard-card { 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .excellent { 
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            border: 2px solid #27ae60; 
+        }
+        
+        .good { 
+            background: linear-gradient(135deg, #dcedc1, #a8e6cf);
+            border: 2px solid #2ecc71; 
+        }
+        
+        .warning { 
+            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+            border: 2px solid #f39c12; 
+        }
+        
+        .critical { 
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border: 2px solid #e74c3c; 
+        }
+        
+        .card-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .card-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+            color: #2c3e50;
+        }
+        
+        /* Enhanced DC section styling */
+        .dc-section { 
+            margin: 30px 0; 
+            border: 2px solid #667eea; 
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .dc-header { 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; 
+            padding: 20px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dc-title {
+            font-size: 24px;
+            font-weight: 300;
+        }
+        
+        .dc-score {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .dc-content {
+            padding: 25px;
+        }
+        
+        .subsection { 
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .drift-alert { 
+            background: linear-gradient(135deg, #fff3cd, #fce4a6);
+            border: 2px solid #f39c12; 
+            border-radius: 10px; 
+            padding: 20px; 
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(243, 156, 18, 0.2);
+        }
+        
+        .remediation-section {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .explanation-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .security-impact {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-excellent { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+        .progress-good { background: linear-gradient(90deg, #f39c12, #e67e22); }
+        .progress-warning { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+        
+        .footer { 
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 30px; 
+            text-align: center; 
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .enterprise-dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .header .enterprise-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .dc-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .dc-score {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- =========================================================================================== -->
+        <!-- ENHANCED HEADER SECTION -->
+        <!-- =========================================================================================== -->
+        <div class="header">
+            <h1>🛡️ MDI Ultra-Detailed Enterprise Report</h1>
+            <div class="subtitle">Comprehensive Microsoft Defender for Identity Configuration Analysis</div>
+            <div class="enterprise-info">
+                <div class="info-item">
+                    <div class="label">Domain</div>
+                    <div class="value">gulabprasad.com</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Forest</div>
+                    <div class="value">gulabprasad.com</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Report Generated</div>
+                    <div class="value">2025-07-29 11:21:39</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Domain Controllers</div>
+                    <div class="value">1 Total</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Overall Score</div>
+                    <div class="value">100%</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Enterprise Status</div>
+                    <div class="value">ENTERPRISE READY</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- =========================================================================================== -->
+        <!-- ENHANCED ENTERPRISE DASHBOARD -->
+        <!-- =========================================================================================== -->
+        <div class="section">
+            <h2>🎯 Enterprise Compliance Dashboard</h2>
+            <div class="enterprise-dashboard">
+                <div class="dashboard-card excellent">
+                    <div class="card-title">Overall Enterprise Score</div>
+                    <div class="card-value">100%</div>
+                    <div class="card-subtitle">ENTERPRISE READY</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill progress-excellent" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="dashboard-card excellent">
+                    <div class="card-title">Excellent DCs (95%+)</div>
+                    <div class="card-value">5</div>
+                    <div class="card-subtitle">Fully MDI Ready</div>
+                </div>
+                <div class="dashboard-card good">
+                    <div class="card-title">Good DCs (85-94%)</div>
+                    <div class="card-value">0</div>
+                    <div class="card-subtitle">Minor Issues</div>
+                </div>
+                <div class="dashboard-card warning">
+                    <div class="card-title">Needs Attention (70-84%)</div>
+                    <div class="card-value">0</div>
+                    <div class="card-subtitle">Moderate Issues</div>
+                </div>
+                <div class="dashboard-card critical">
+                    <div class="card-title">Critical Issues (<70%)</div>
+                    <div class="card-value">0</div>
+                    <div class="card-subtitle">Immediate Action Required</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-title">Configuration Drift</div>
+                    <div class="card-value">0</div>
+                    <div class="card-subtitle">Inconsistencies Detected</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-title">Reachable DCs</div>
+                    <div class="card-value">1</div>
+                    <div class="card-subtitle">of 1 Total</div>
+                </div>
+            </div>
+        </div>        <!-- =========================================================================================== -->
+        <!-- ULTRA-DETAILED DOMAIN CONTROLLER ANALYSIS -->
+        <!-- =========================================================================================== -->
+        <div class="section">
+            <h2>🔍 Ultra-Detailed Domain Controller Analysis</h2>
+            <div class="explanation-box">
+                <h4>📋 Analysis Overview</h4>
+                <p>This section provides comprehensive analysis of each domain controller's MDI readiness, including detailed configuration status, security implications, and specific remediation steps.</p>
+                <p><strong>Scoring System:</strong> Each DC is scored out of 100 points across four critical areas: Audit Policies (40 pts), NTLM Configuration (30 pts), Event Generation (20 pts), and System Prerequisites (10 pts).</p>
+            </div>            <!-- Domain Controller: CORP-DEMUNDC01 -->
+            <div class="dc-section">
+                <div class="dc-header">
+                    <div class="dc-title">🖥️ CORP-DEMUNDC01</div>
+                    <div class="dc-score">Score: 100% (EXCELLENT)</div>
+                </div>
+                <div class="dc-content">
+                    
+                    <!-- Enhanced System Information -->
+                    <div class="subsection">
+                        <h3>🔧 System Configuration Details</h3>
+                        <table>
+                            <tr><th>Property</th><th>Value</th><th>Assessment</th></tr>
+                            <tr><td>Site</td><td>Default-First-Site-Name</td><td>Network Location</td></tr>
+                            <tr><td>IP Address</td><td>192.168.178.10</td><td>Primary Network Interface</td></tr>
+                            <tr><td>Operating System</td><td>Microsoft Windows Server 2022 Datacenter Evaluation (Build 20348)</td><td>✅ Modern OS</td></tr>
+                            <tr><td>Last Boot</td><td>07/29/2025 11:14:21</td><td>System Uptime</td></tr>
+                            <tr><td>Total RAM</td><td>16.87 GB</td><td>✅ Sufficient</td></tr>
+                            <tr><td>Domain Role</td><td>Primary Domain Controller</td><td>Active Directory Role</td></tr>
+                            <tr><td>FSMO Roles</td><td>SchemaMaster, DomainNamingMaster, PDCEmulator, RIDMaster, InfrastructureMaster</td><td>🎯 FSMO Holder</td></tr>
+                            <tr><td>Global Catalog</td><td>True</td><td>🌐 Global Catalog Server</td></tr>
+                            <tr><td>Functional Level</td><td>Domain: Windows2016Domain | Forest: Windows2016Forest</td><td>Compatibility Level</td></tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Ultra-Detailed Audit Policy Analysis -->
+                    <div class="subsection">
+                        <h3>📋 Ultra-Detailed Audit Policy Configuration</h3>
+                        <div class="explanation-box">
+                            <h4>🎯 Audit Policy Importance for MDI</h4>
+                            <p>Audit policies are the foundation of MDI's detection capabilities. Each policy enables specific security events that MDI analyzes to detect threats and suspicious activities.</p>
+                            <p><strong>Score: 40/40 points</strong> (11 of 11 policies compliant)</p>
+                        </div>
+                        <table>
+                            <tr><th>Policy</th><th>Current Setting</th><th>Status</th><th>Risk Level</th><th>MDI Events</th><th>Threat Detection</th></tr><tr><td><strong>Computer Account Management</strong><br><small>Logs computer account creation, deletion, and modification</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4741, 4742, 4743</td><td>Rogue Computer Accounts, Machine Account Compromise</td></tr><tr><td><strong>Credential Validation</strong><br><small>Logs NTLM and Kerberos authentication attempts</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4776, 4777</td><td>Pass-the-Hash, Brute Force, Credential Stuffing</td></tr><tr><td><strong>Directory Service Access</strong><br><small>Logs LDAP queries and directory access operations</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4662</td><td>LDAP Reconnaissance, Directory Enumeration, Data Exfiltration</td></tr><tr><td><strong>Directory Service Changes</strong><br><small>Logs modifications to Active Directory objects and their attributes</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>5136, 5137, 5138, 5139, 5141</td><td>AD Object Manipulation, Schema Changes, DACL Modifications</td></tr><tr><td><strong>Distribution Group Management</strong><br><small>Logs distribution group membership and property changes</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4749, 4750, 4751, 4752, 4753</td><td>Email Group Manipulation, Information Disclosure</td></tr><tr><td><strong>Kerberos Authentication Service</strong><br><small>Logs Kerberos AS-REQ and AS-REP ticket requests</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4768, 4771</td><td>ASREPRoasting, Kerberos Brute Force, Golden Ticket</td></tr><tr><td><strong>Kerberos Service Ticket Operations</strong><br><small>Logs Kerberos TGS-REQ and TGS-REP service ticket operations</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4769, 4770</td><td>Kerberoasting, Silver Ticket, Service Account Compromise</td></tr><tr><td><strong>Other Account Logon Events</strong><br><small>Logs other authentication methods and logon events</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4648, 4649</td><td>Alternative Authentication, Logon Anomalies</td></tr><tr><td><strong>Security Group Management</strong><br><small>Logs security group membership and property changes</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4728, 4729, 4732, 4733, 4756, 4757</td><td>Privilege Escalation, Unauthorized Access, Golden Ticket</td></tr><tr><td><strong>Security System Extension</strong><br><small>Logs security service and driver installations</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4610, 4611, 4614, 4622</td><td>Rootkit Installation, Security Bypass, Malicious Extensions</td></tr><tr><td><strong>User Account Management</strong><br><small>Logs user account creation, deletion, modification, and password changes</small></td><td>Success and Failure</td><td class='status-excellent'>Fully Compliant</td><td class='status-excellent'>Low</td><td>4720, 4722, 4724, 4725, 4726, 4738, 4767</td><td>Account Creation, Password Attacks, Account Takeover</td></tr>                        </table>
+                        
+                        <!-- Security Implications Box -->
+                        <div class="security-impact">
+                            <h4>🛡️ Security Implications</h4>
+                            <p>Non-compliant audit policies significantly impact MDI's ability to detect advanced threats. Missing events can create blind spots in your security monitoring, allowing attackers to operate undetected.</p>
+                            <ul>
+                                <li><strong>Directory Service Access (4662):</strong> Critical for detecting LDAP-based reconnaissance and data exfiltration</li>
+                                <li><strong>Credential Validation (4776):</strong> Essential for identifying credential-based attacks like Pass-the-Hash</li>
+                                <li><strong>Kerberos Events (4768/4769):</strong> Required for detecting Kerberoasting and Golden/Silver ticket attacks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Ultra-Detailed NTLM Configuration Analysis -->
+                    <div class="subsection">
+                        <h3>🔐 Ultra-Detailed NTLM Configuration Analysis</h3>
+                        <div class="explanation-box">
+                            <h4>🎯 NTLM Configuration Importance for MDI</h4>
+                            <p>NTLM auditing configurations are crucial for MDI to detect NTLM-based attacks including Pass-the-Hash, NTLM Relay, and credential stuffing attacks.</p>
+                            <p><strong>Score: 30/30 points</strong> (5 of 5 settings compliant)</p>
+                        </div>
+                        <table>
+                            <tr><th>Setting</th><th>Current</th><th>Expected</th><th>Status</th><th>Registry Path</th><th>MDI Impact</th></tr>            <tr>
+                <td><strong>AuditNTLMInDomain</strong><br><small>Controls auditing of NTLM authentication events in the domain</small></td>
+                <td>Enable for all accounts (Recommended)</td>
+                <td>Enable for all accounts (Recommended)</td>
+                <td class='status-excellent'>Fully Compliant</td>
+                <td><code>HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters\AuditNTLMInDomain</code></td>
+                <td>Essential for comprehensive domain NTLM monitoring</td>
+            </tr>            <tr>
+                <td><strong>AuditReceivingNTLMTraffic</strong><br><small>Controls auditing of NTLM authentication traffic received by this server</small></td>
+                <td>Enable auditing for all accounts (Recommended)</td>
+                <td>Enable auditing for all accounts (Recommended)</td>
+                <td class='status-excellent'>Fully Compliant</td>
+                <td><code>HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0\AuditReceivingNTLMTraffic</code></td>
+                <td>Essential for comprehensive NTLM attack detection</td>
+            </tr>            <tr>
+                <td><strong>RestrictReceivingNTLMTraffic</strong><br><small>Controls restrictions on NTLM authentication traffic received by this server</small></td>
+                <td>Audit all - Recommended for monitoring</td>
+                <td>Audit all - Recommended for monitoring</td>
+                <td class='status-excellent'>Fully Compliant</td>
+                <td><code>HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0\RestrictReceivingNTLMTraffic</code></td>
+                <td>Recommended for NTLM visibility and gradual restriction</td>
+            </tr>            <tr>
+                <td><strong>RestrictSendingNTLMTraffic</strong><br><small>Controls restrictions on NTLM authentication traffic sent by this server</small></td>
+                <td>Audit all - Recommended for monitoring</td>
+                <td>Audit all - Recommended for monitoring</td>
+                <td class='status-excellent'>Fully Compliant</td>
+                <td><code>HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0\RestrictSendingNTLMTraffic</code></td>
+                <td>Important for detecting lateral movement patterns</td>
+            </tr>            <tr>
+                <td><strong>SCENoApplyLegacyAuditPolicy</strong><br><small>Forces use of advanced audit policy subcategory settings</small></td>
+                <td>Force advanced audit subcategory settings (Recommended)</td>
+                <td>Force advanced audit subcategory settings (Recommended)</td>
+                <td class='status-excellent'>Fully Compliant</td>
+                <td><code>HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\SCENoApplyLegacyAuditPolicy</code></td>
+                <td>Critical for reliable audit policy configuration</td>
+            </tr>                        </table>
+                    </div>
+                    
+                    <!-- Ultra-Detailed Event Analysis -->
+                    <div class="subsection">
+                        <h3>📊 Ultra-Detailed Security Event Analysis</h3>
+                        <div class="explanation-box">
+                            <h4>📈 Event Generation Assessment</h4>
+                            <p>Active security event generation is the lifeblood of MDI threat detection. This analysis shows event frequency patterns and identifies potential issues.</p>
+                            <p><strong>Score: 20/20 points</strong> (2 of 2 critical events active)</p>
+                        </div>
+                        <table>
+                            <tr><th>Event ID</th><th>Description</th><th>24h Count</th><th>7d Average</th><th>Frequency Assessment</th><th>MDI Relevance</th><th>Status</th></tr>            <tr>
+                <td><strong>4624</strong></td>
+                <td>Account Logon<br><small>An account was successfully logged on</small></td>
+                <td>1000</td>
+                <td>714.29</td>
+                <td class='status-excellent'>Normal</td>
+                <td>Medium - Provides context for authentication patterns</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>4625</strong></td>
+                <td>Account Logon Failed<br><small>An account failed to log on</small></td>
+                <td>38</td>
+                <td>5.57</td>
+                <td class='status-excellent'>Normal</td>
+                <td>Medium - Indicates potential brute force attacks</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>4662</strong></td>
+                <td>Directory Service Access<br><small>An operation was performed on an object in Active Directory</small></td>
+                <td>1000</td>
+                <td>714.29</td>
+                <td class='status-warning'>Low (Potential Issue)</td>
+                <td>Critical - Primary event for LDAP reconnaissance and data access detection</td>
+                <td class='status-excellent'>Active</td>
+            </tr>                <tr><td colspan='7'>
+                    <div class="explanation-box">
+                        <strong>🔍 Detailed Analysis for Event 4662:</strong><br>
+                        <strong>Normal Frequency:</strong> High - Hundreds to thousands per hour in active environments<br>
+                        <strong>Threat Indicators:</strong> Unusual LDAP queries, Bulk directory enumeration, Privilege escalation attempts<br>
+                        <strong>Recommendation:</strong> Monitor for unusual patterns<br><strong>Recent Event Sample:</strong> 07/29/2025 11:20:13</div></td></tr>            <tr>
+                <td><strong>4728</strong></td>
+                <td>Global Group Member Added<br><small>A member was added to a security-enabled global group</small></td>
+                <td>0</td>
+                <td>0</td>
+                <td class='status-excellent'>Normal</td>
+                <td>High - Critical for detecting privilege escalation</td>
+                <td class='status-critical'>No Events (Potential Issue)</td>
+            </tr>            <tr>
+                <td><strong>4732</strong></td>
+                <td>Local Group Member Added<br><small>A member was added to a security-enabled local group</small></td>
+                <td>0</td>
+                <td>0</td>
+                <td class='status-excellent'>Normal</td>
+                <td>High - Indicates local privilege changes</td>
+                <td class='status-critical'>No Events (Potential Issue)</td>
+            </tr>            <tr>
+                <td><strong>4768</strong></td>
+                <td>Kerberos TGT Request<br><small>A Kerberos authentication ticket (TGT) was requested</small></td>
+                <td>408</td>
+                <td>61.86</td>
+                <td class='status-excellent'>Normal</td>
+                <td>High - Detects Kerberos authentication patterns and anomalies</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>4769</strong></td>
+                <td>Kerberos Service Ticket<br><small>A Kerberos service ticket was requested</small></td>
+                <td>637</td>
+                <td>97.57</td>
+                <td class='status-excellent'>Normal</td>
+                <td>High - Critical for detecting Kerberoasting attacks</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>4771</strong></td>
+                <td>Kerberos Pre-authentication Failed<br><small>Kerberos pre-authentication failed</small></td>
+                <td>1</td>
+                <td>0.14</td>
+                <td class='status-excellent'>Normal</td>
+                <td>Medium - Indicates potential brute force or ASREPRoasting</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>4776</strong></td>
+                <td>NTLM Authentication<br><small>The computer attempted to validate the credentials for an account</small></td>
+                <td>1000</td>
+                <td>148.86</td>
+                <td class='status-excellent'>Normal</td>
+                <td>High - Essential for detecting NTLM-based attacks</td>
+                <td class='status-excellent'>Active</td>
+            </tr>                <tr><td colspan='7'>
+                    <div class="explanation-box">
+                        <strong>🔍 Detailed Analysis for Event 4776:</strong><br>
+                        <strong>Normal Frequency:</strong> Medium - Varies based on NTLM usage in environment<br>
+                        <strong>Threat Indicators:</strong> Brute force attempts, Pass-the-hash attacks, Unusual source IPs<br>
+                        <strong>Recommendation:</strong> Monitor for unusual patterns<br><strong>Recent Event Sample:</strong> 07/29/2025 11:18:47</div></td></tr>            <tr>
+                <td><strong>5136</strong></td>
+                <td>Directory Object Modified<br><small>A directory service object was modified</small></td>
+                <td>276</td>
+                <td>39.43</td>
+                <td class='status-excellent'>Normal</td>
+                <td>Medium - Tracks AD object changes</td>
+                <td class='status-excellent'>Active</td>
+            </tr>            <tr>
+                <td><strong>8004</strong></td>
+                <td>NTLM Authentication (Detailed)<br><small>An NTLM authentication occurred with detailed audit information</small></td>
+                <td>0</td>
+                <td>0</td>
+                <td class='status-excellent'>Normal</td>
+                <td>Critical - Provides detailed NTLM attack visibility for MDI</td>
+                <td class='status-critical'>No Events (Potential Issue)</td>
+            </tr>                        </table>
+                    </div>
+                    
+                    <!-- MDI Prerequisites Analysis -->
+                    <div class="subsection">
+                        <h3>🔧 MDI Sensor Prerequisites Analysis</h3>
+                        <div class="explanation-box">
+                            <h4>📋 System Readiness for MDI Sensor Installation</h4>
+                            <p>These prerequisites ensure successful MDI sensor deployment and optimal performance.</p>
+                            <p><strong>Score: 10/10 points</strong></p>
+                        </div>
+                        <table>
+                            <tr><th>Prerequisite</th><th>Current Status</th><th>Requirement</th><th>Assessment</th><th>Recommendation</th></tr>            <tr>
+                <td><strong>DiskSpace</strong></td>
+                <td>19.46 GB</td>
+                <td>Minimum 6 GB free space</td>
+                <td class='status-excellent'>Sufficient</td>
+                <td>Sufficient disk space available</td>
+            </tr>            <tr>
+                <td><strong>DotNetFramework</strong></td>
+                <td>Unknown (528449)</td>
+                <td>.NET Framework 4.7.2 or higher</td>
+                <td class='status-excellent'>Compliant</td>
+                <td>Meets requirements</td>
+            </tr>            <tr>
+                <td><strong>WindowsDefender</strong></td>
+                <td>Defender: True</td>
+                <td></td>
+                <td class='status-excellent'>Configured</td>
+                <td>Windows Defender properly configured for MDI</td>
+            </tr><tr><td colspan='5'><div class='remediation-section'><strong>🔧 Remediation:</strong><div class='code-block'>Add-MpPreference -ExclusionPath "C:\Program Files\Azure Advanced Threat Protection Sensor"</div></div></td></tr>                        </table>
+                    </div>
+                    
+                    <!-- Event Log Configuration Analysis -->
+                    <div class="subsection">
+                        <h3>📋 Event Log Configuration Analysis</h3>
+                        <div class="explanation-box">
+                            <h4>📊 Event Log Capacity and Retention Analysis</h4>
+                            <p>Proper event log sizing ensures adequate retention of security events for MDI analysis and forensic investigations.</p>
+                        </div>
+                        <table>
+                            <tr><th>Log Name</th><th>Status</th><th>Records</th><th>Size (MB)</th><th>Recommended (MB)</th><th>Estimated Retention</th><th>MDI Importance</th></tr>                <tr>
+                    <td><strong>Application</strong></td>
+                    <td class='status-excellent'>Enabled</td>
+                    <td>38904</td>
+                    <td class='status-excellent'>1024</td>
+                    <td>512</td>
+                    <td>31.2 days</td>
+                    <td>Low - Limited MDI relevance</td>
+                </tr>                <tr>
+                    <td><strong>Microsoft-Windows-NTLM/Operational</strong></td>
+                    <td class='status-excellent'>Enabled</td>
+                    <td>1594</td>
+                    <td class='status-warning'>1</td>
+                    <td>256</td>
+                    <td>0.2 days</td>
+                    <td>High - Critical for NTLM attack detection</td>
+                </tr><tr><td colspan='7'><div class='remediation-section'><strong>🔧 Increase Log Size:</strong><div class='code-block'>wevtutil sl "Microsoft-Windows-NTLM/Operational" /ms:268435456</div><strong>Retention Recommendation:</strong> Minimum 30 days</div></td></tr>                <tr>
+                    <td><strong>Security</strong></td>
+                    <td class='status-excellent'>Enabled</td>
+                    <td>615371</td>
+                    <td class='status-warning'>1024</td>
+                    <td>2048</td>
+                    <td>1.3 days</td>
+                    <td>Critical - Primary source for MDI events</td>
+                </tr><tr><td colspan='7'><div class='remediation-section'><strong>🔧 Increase Log Size:</strong><div class='code-block'>wevtutil sl "Security" /ms:2147483648</div><strong>Retention Recommendation:</strong> Minimum 30 days, preferably 90 days</div></td></tr>                <tr>
+                    <td><strong>System</strong></td>
+                    <td class='status-excellent'>Enabled</td>
+                    <td>32805</td>
+                    <td class='status-excellent'>512</td>
+                    <td>512</td>
+                    <td>21.7 days</td>
+                    <td>Medium - Provides context for system changes</td>
+                </tr>                        </table>
+                    </div>
+                    
+                    <!-- Network Configuration Analysis -->
+                    <div class="subsection">
+                        <h3>🌐 Network Configuration Analysis</h3>
+                        <table>
+                            <tr><th>Component</th><th>Configuration</th><th>Status</th><th>Recommendation</th></tr><tr><td>DNS Servers</td><td>192.168.178.10, 192.168.178.1</td><td class='status-excellent'>Configured</td><td>Ensure DNS points to domain controllers for proper name resolution</td></tr><tr><td>MDI Cloud Endpoints</td><td>*.atp.azure.com<br>*.atp.azure.cn<br>*.atp.azure.us</td><td class='status-warning'>Manual verification required</td><td>Verify firewall allows HTTPS (443) to MDI cloud endpoints<br><strong>Note:</strong> Check corporate firewall for *.atp.azure.com access</td></tr>                        </table>
+                    </div>
+                </div>
+            </div>        <!-- =========================================================================================== -->
+        <!-- COMPREHENSIVE RECOMMENDATIONS -->
+        <!-- =========================================================================================== -->
+        <div class="section">
+            <h2>📋 Comprehensive Enterprise Recommendations</h2>
+            
+            <div class="explanation-box">
+                <h3>🎯 Executive Summary</h3>
+                <p>Your enterprise achieved an overall MDI readiness score of <strong>100%</strong> with status: <strong>ENTERPRISE READY</strong></p>
+                <p>This assessment evaluated 1 domain controllers across four critical areas essential for Microsoft Defender for Identity deployment.</p>
+            </div>            <div class="remediation-section">
+                <h3>🏆 Excellent - Enterprise Ready</h3>
+                <p>Your environment is excellently configured for MDI deployment. All critical settings are properly configured.</p>
+                <h4>Next Steps:</h4>
+                <ul>
+                    <li>Proceed with MDI sensor installation on all domain controllers</li>
+                    <li>Configure MDI workspace in Microsoft 365 Defender portal</li>
+                    <li>Establish baseline behavioral patterns during initial learning period</li>
+                    <li>Configure alert notifications and integration with SIEM systems</li>
+                </ul>
+            </div>            <div class="explanation-box">
+                <h3>📅 Recommended Implementation Timeline</h3>
+                <table>
+                    <tr><th>Phase</th><th>Activities</th><th>Estimated Duration</th><th>Prerequisites</th></tr>
+                    <tr><td><strong>Phase 1: Preparation</strong></td><td>• Address critical configuration issues<br>• Resolve connectivity problems<br>• Standardize settings across DCs</td><td>1-2 weeks</td><td>• Administrative access to all DCs<br>• Change management approval</td></tr>
+                    <tr><td><strong>Phase 2: Validation</strong></td><td>• Re-run this assessment<br>• Verify event generation<br>• Test connectivity</td><td>1 week</td><td>• Completion of Phase 1<br>• 24-48 hours for event validation</td></tr>
+                    <tr><td><strong>Phase 3: MDI Deployment</strong></td><td>• Install MDI sensors<br>• Configure MDI workspace<br>• Establish baselines</td><td>2-3 weeks</td><td>• 95%+ readiness score<br>• MDI licensing</td></tr>
+                    <tr><td><strong>Phase 4: Optimization</strong></td><td>• Fine-tune detection rules<br>• Configure integrations<br>• Train security team</td><td>2-4 weeks</td><td>• Successful MDI deployment<br>• Initial learning period completion</td></tr>
+                </table>
+            </div>
+        </div>        <!-- =========================================================================================== -->
+        <!-- ENHANCED REPORT FOOTER -->
+        <!-- =========================================================================================== -->
+        <div class="footer">
+            <h3>📊 Report Information</h3>
+            <p><strong>Generated:</strong> 2025-07-29 11:21:39 | <strong>Version:</strong> Ultra-Detailed Enterprise Edition v4.0</p>
+            <p><strong>Assessment Coverage:</strong> 1 of 1 Domain Controllers Successfully Analyzed</p>
+            <p><strong>Total Events Analyzed:</strong> 0 security events in last 24 hours</p>
+            <hr style="border: 1px solid #555; margin: 20px 0;">
+            <p><strong>Microsoft Defender for Identity Ultra-Detailed Assessment</strong></p>
+            <p>Created By: <a href="https://gulabprasad.com">Gulab Prasad</a> | Enhanced Enterprise Security Assessment Tool</p>
+            <p><em>This report provides comprehensive analysis for MDI deployment readiness. For questions or support, visit the creator's website.</em></p>
+        </div>
+    </div>
+</body>
+</html>
