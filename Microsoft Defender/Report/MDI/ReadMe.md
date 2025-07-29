@@ -79,6 +79,8 @@ The **MDI Ultra-Detailed Enterprise Assessment Tool** is a comprehensive PowerSh
    ```
 <img width="1102" height="633" alt="image" src="https://github.com/user-attachments/assets/432a3012-e0a7-470e-ae76-753e5c3a8f6c" />
 
+<img width="1999" height="2006" alt="image" src="https://github.com/user-attachments/assets/f209d4d3-b951-4680-aa26-ab6fa47ac97b" />
+
 
 That's it! The script will automatically:
 - ✅ Discover all domain controllers
