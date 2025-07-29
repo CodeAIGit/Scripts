@@ -361,8 +361,6 @@ Please use the [GitHub Issues](https://github.com/[username]/mdi-enterprise-asse
 - 🔧 MDI prerequisites validation
 - 📋 Implementation timeline recommendations
 
-See [CHANGELOG.md](CHANGELOG.md) for complete version history.
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
