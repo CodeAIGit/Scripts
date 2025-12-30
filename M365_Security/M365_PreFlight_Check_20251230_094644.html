@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>M365 Security Pre-Flight Check</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1600px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { margin: 0 0 10px 0; font-size: 36px; }
+        .header .warning { font-size: 18px; background: #fff; color: #ff6b6b; padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 15px; font-weight: bold; }
+        .summary { padding: 40px; background: #f8f9fa; }
+        .summary h2 { margin: 0 0 25px 0; font-size: 28px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .summary-card { background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .summary-card h3 { margin: 0 0 10px 0; font-size: 42px; font-weight: bold; }
+        .summary-card p { margin: 0; color: #666; font-size: 14px; }
+        .will-change { color: #ff6b6b; }
+        .already-ok { color: #28a745; }
+        .manual { color: #ffc107; }
+        .content { padding: 40px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        th { background: #343a40; color: white; padding: 15px; text-align: left; font-size: 13px; text-transform: uppercase; }
+        td { padding: 15px; border-bottom: 1px solid #e9ecef; font-size: 14px; }
+        tr:hover { background: #f8f9fa; }
+        .badge { padding: 5px 15px; border-radius: 15px; font-weight: bold; font-size: 11px; text-transform: uppercase; }
+        .badge-change { background: #f8d7da; color: #721c24; }
+        .badge-ok { background: #d4edda; color: #155724; }
+        .badge-manual { background: #fff3cd; color: #856404; }
+        .footer { padding: 40px; background: #f8f9fa; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pre-Flight Check Report</h1>
+            <div class="warning">READ-ONLY - No Changes Were Made</div>
+            <p style="margin-top: 20px;"><strong>Generated:</strong> December 30, 2025 09:46:44</p>
+            <p><strong>Tenant:</strong> gulabprasad.onmicrosoft.com</p>
+        </div>
+        
+        <div class="summary">
+            <h2>What Will Happen When You Run The Main Script:</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3 class="will-change">8</h3>
+                    <p>Settings WILL BE CHANGED</p>
+                </div>
+                <div class="summary-card">
+                    <h3 class="already-ok">3</h3>
+                    <p>Already Configured</p>
+                </div>
+                <div class="summary-card">
+                    <h3 class="manual">4</h3>
+                    <p>Require Manual Configuration</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>Detailed Configuration Analysis</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Setting</th>
+                        <th>Current Value</th>
+                        <th>Target Value</th>
+                        <th>What Will Happen</th>
+                    </tr>
+                </thead>
+                <tbody>                    <tr>
+                        <td><strong>Compliance</strong></td>
+                        <td>Unified Audit Logging</td>
+                        <td>Disabled</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will enable</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Compliance</strong></td>
+                        <td>Mailbox Auditing</td>
+                        <td>Enabled</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-ok">Already OK</span><br><small>Already enabled</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Exchange Online</strong></td>
+                        <td>BSM (Reject Direct Send)</td>
+                        <td>Allowed</td>
+                        <td>Blocked</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will block</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Exchange Online</strong></td>
+                        <td>Anti-Malware</td>
+                        <td>Configured</td>
+                        <td>Configured</td>
+                        <td><span class="badge badge-ok">Already OK</span><br><small>Already configured</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Exchange Online</strong></td>
+                        <td>Auto-Forwarding</td>
+                        <td>Automatic</td>
+                        <td>Off</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will disable</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Defender for Office 365</strong></td>
+                        <td>Malicious URL Protection</td>
+                        <td>Not configured</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will enable for Teams</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Defender for Office 365</strong></td>
+                        <td>File Protection</td>
+                        <td>Not configured</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will enable</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Defender for Office 365</strong></td>
+                        <td>ATP for SPO/ODB/Teams</td>
+                        <td>Enabled</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-ok">Already OK</span><br><small>Already enabled</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Microsoft Teams</strong></td>
+                        <td>Prevent Screen Capture</td>
+                        <td>Disabled</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will enable</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Microsoft Teams</strong></td>
+                        <td>Granular External Access</td>
+                        <td>Not configured</td>
+                        <td>Configured</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will block consumer chat</small></td>
+                    </tr>                    <tr>
+                        <td><strong>SharePoint Online</strong></td>
+                        <td>Content Security Policy</td>
+                        <td>Not configured</td>
+                        <td>Configured</td>
+                        <td><span class="badge badge-change">WILL CHANGE</span><br><small>Will configure</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Authentication</strong></td>
+                        <td>QR Code Authentication</td>
+                        <td>Not checked</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-manual">Manual Required</span><br><small>Graph API not available - check manually</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Intune</strong></td>
+                        <td>Disable Personal Accounts</td>
+                        <td>Not checked</td>
+                        <td>Configured</td>
+                        <td><span class="badge badge-manual">Manual Required</span><br><small>Graph API not available - check manually</small></td>
+                    </tr>                    <tr>
+                        <td><strong>Microsoft Purview</strong></td>
+                        <td>DSPM</td>
+                        <td>N/A</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-manual">Manual Required</span><br><small>Requires manual portal configuration</small></td>
+                    </tr>                    <tr>
+                        <td><strong>SharePoint Online</strong></td>
+                        <td>Knowledge Agent</td>
+                        <td>N/A</td>
+                        <td>Enabled</td>
+                        <td><span class="badge badge-manual">Manual Required</span><br><small>Requires manual portal configuration</small></td>
+                    </tr>                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <h3>Summary</h3>
+            <p><strong>8</strong> settings will be changed when you run the main configuration script.</p>
+            <p><strong>3</strong> settings are already configured correctly.</p>
+            <p><strong>4</strong> settings require manual configuration in portals.</p>
+            <p style="margin-top: 30px; color: #666;">This was a READ-ONLY check. No changes were made to your environment.</p>
+        </div>
+    </div>
+</body>
+</html>
