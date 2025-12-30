@@ -519,5 +519,3 @@ Write-Log "Next steps:" -Level Info
 Write-Log "  1. Review the HTML report to see what will change" -Level Info
 Write-Log "  2. If satisfied, run the main configuration script" -Level Info
 Write-Log "  3. Or make adjustments before running" -Level Info
-
-Write-Host ""
