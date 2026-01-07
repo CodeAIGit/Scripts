@@ -899,23 +899,6 @@ If you discover a security vulnerability, please email contact@gulabprasad.com i
 
 ---
 
-## ⭐ Star History
-
-If you find this toolkit useful, please consider giving it a star on GitHub!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/m365-security-toolkit&type=Date)](https://star-history.com/#yourusername/m365-security-toolkit&Date)
-
----
-
-## 📢 Stay Updated
-
-- **Watch** this repository for updates
-- **Star** to show your support
-- **Fork** to contribute
-- **Share** with your network
-
----
-
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gulab/)
